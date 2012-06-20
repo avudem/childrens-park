@@ -440,7 +440,7 @@ class ChatRoomJabberBot(JabberBot):
 
     @botcmd(name=',ideas')
     def ideas(self, mess, args):
-        """Maintain a list of ideas/items. Use ,ideas help."""
+        """Maintain a lis of ideas/items. Use ,ideas help."""
         user = self.get_sender_username(mess)
         if user in self.users:
             if args.startswith('show'):
@@ -621,7 +621,7 @@ class ChatRoomJabberBot(JabberBot):
     def show_roster(self, mess, args):
         """ Return the roster of friends.
         """
-        return '\n'.join([contact for contact in self.roster.getItems()])
+        return '\n'.join([contact for contact in sorted(self.roster.getItems())])
 
     @botcmd(name=',help')
     def help_alias(self, mess, args):
