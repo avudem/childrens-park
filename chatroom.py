@@ -440,7 +440,7 @@ class ChatRoomJabberBot(JabberBot):
 
     @botcmd(name=',ideas')
     def ideas(self, mess, args):
-        """Maintain a lis of ideas/items. Use ,ideas help."""
+        """Maintain a list of ideas/items. Use ,ideas help."""
         user = self.get_sender_username(mess)
         if user in self.users:
             if args.startswith('show'):
